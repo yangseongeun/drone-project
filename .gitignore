@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# 환경
+venv/
+.env
+
+# LabVIEW
+*.lvlps
+*.aliases
+build/
+
+# OS
+.DS_Store
+Thumbs.db
