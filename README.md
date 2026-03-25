@@ -142,9 +142,14 @@ python labview_drone_main.py
 
 ## 📷 결과 화면
 
-* LabVIEW Front Panel (UI)
-* Block Diagram (TCP 구조)
-* Python 실행 로그
+### LabVIEW UI
+![UI](docs/front_panel.png)
+
+### Block Diagram
+![Block](docs/block_diagram.png)
+
+### Python Execution
+![Run](docs/python_run.png)
 
 ---
 
