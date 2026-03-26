@@ -7,11 +7,33 @@ LabVIEW에서 사용자 입력(UI 버튼)을 통해 명령을 생성하고, Pyth
 
 ---
 
-## 🎯 동기
+## 🎯 프로젝트 목적
 
 드론 제어를 단순한 코드 실행이 아닌,
 UI(LabVIEW)와 제어 로직(Python)을 분리한 구조로 설계하여
 실제 시스템 연동 경험을 쌓고자 프로젝트를 진행하였다.
+
+---
+
+## 📁 프로젝트 구조
+
+drone-project/
+│
+├── python/
+│ ├── labview_drone_main.py # 메인 실행 파일 (서버 실행)
+│ ├── command_mapping.py # 명령어 매핑
+│ └── drone_commands.py # 드론 제어 함수
+│
+├── labview/
+│ └── Python과 TCP 연결하여 드론 날리기.vi (클라이언트)
+│
+├── docs/
+│ ├── (labview) front_panel.png
+│ ├── (labview) block_diagram.png
+│ └── (python) python_run.png
+│
+├── requirements.txt
+└── README.md
 
 ---
 
@@ -33,6 +55,11 @@ Drone
 
 ## 🔧 기술 스택
 
+- **Language**: Python
+- **Tool**: LabVIEW, Visual Studio Code
+- **Library**: e-drone, keyboard
+- **Communication**: TCP Socket
+
 * **LabVIEW**
 
   * Event Structure 기반 UI 제어
@@ -43,10 +70,6 @@ Drone
   * Socket Programming
   * Threading (비상착륙)
   * Command Mapping 구조 설계
-
-* **Drone SDK**
-
-  * e_drone 라이브러리 사용
 
 ---
 
@@ -80,16 +103,31 @@ Drone
 
 ## ⚙️ 실행 방법
 
-### 1️⃣ Python 서버 실행
+### 1️⃣ Python 환경 설정
+```bash
+python -m venv venv
+venv\Scripts\activate   # (Windows 기준)
+pip install -r requirements.txt
+```
+
+### 2️⃣ Python 서버 실행
 
 ```bash
 python labview_drone_main.py
 ```
 
-### 2️⃣ LabVIEW 실행
+### 3️⃣ LabVIEW 실행
 
-* TCP 연결 (`localhost`, port: 8087)
+* labview 폴더 내 Python과 TCP 연결해서 드론 날리기.vi 실행
+* TCP 연결 (`localhost`, port: 8087) -> 프런트패널에 정보 입력
 * 버튼 클릭 시 명령 전송
+
+---
+
+## ⚠️ 주의 사항
+
+드론 연결 상태 확인 후 실행
+비상 상황 발생 시 아래의 **비상 착륙 기능** 사용
 
 ---
 
