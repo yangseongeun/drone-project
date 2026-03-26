@@ -209,6 +209,12 @@ LAND_ → 착륙
 
 ---
 
+## 📈 개선 방향
+
+LabVIEW 블록다이어그램 및 python 코드 개선(python 서버 실행 후 LabVIEW 클라이언트 접속 후 연결 유지 후 종료)
+
+---
+
 ## 👨‍💻 개발자
 
 * Yang Seong-eun
