@@ -17,6 +17,7 @@ UI(LabVIEW)와 제어 로직(Python)을 분리한 구조로 설계하여
 
 ## 📁 프로젝트 구조
 
+```
 drone-project/
 │
 ├── python/
@@ -34,6 +35,7 @@ drone-project/
 │
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
